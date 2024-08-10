@@ -1,0 +1,40 @@
+++Đăng kí user mới 
+method : POST
+Json:
+{
+    "username": "newuser",
+    "password": "NewUser@123",
+    "email": "newuser@example.com",
+    "fullName": "New User"
+}
+URL: http://localhost:7221/api/auth/register
+
+++Đăng nhập user:
+method: POST
+Json:
+{
+    "username": "newuser",
+    "password": "NewUser@123"
+}
+URL: http://localhost:7221/api/auth/login
+
+++Xem danh sách user:
+method: Get
+URL: http://localhost:7221/api/user
+
+++Xem chi tiết thông tin của user bằng id:
+method: Get
+Json:
+{
+    "username": "updateduser",
+    "email": "updateduser@example.com",
+    "fullName": "Updated User"
+}
+URL: http://localhost:7221/api/user/<id>
+
+++Cập nhật user:
+method: PUT
+URL: http://localhost:7221/api/user/<id>
+
+++Xóa user:
+URL: http://localhost:7221/api/user/{id}
