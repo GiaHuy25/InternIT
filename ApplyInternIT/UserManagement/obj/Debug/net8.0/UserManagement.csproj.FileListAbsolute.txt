@@ -167,3 +167,4 @@ D:\githubfile\InternIT\ApplyInternIT\UserManagement\obj\Debug\net8.0\refint\User
 D:\githubfile\InternIT\ApplyInternIT\UserManagement\obj\Debug\net8.0\UserManagement.pdb
 D:\githubfile\InternIT\ApplyInternIT\UserManagement\obj\Debug\net8.0\UserManagement.genruntimeconfig.cache
 D:\githubfile\InternIT\ApplyInternIT\UserManagement\obj\Debug\net8.0\ref\UserManagement.dll
+D:\githubfile\InternIT\ApplyInternIT\UserManagement\obj\Debug\net8.0\UserManagement.sourcelink.json

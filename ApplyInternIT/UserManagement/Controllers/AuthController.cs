@@ -44,9 +44,33 @@ public class AuthController : ControllerBase
         {
             return Unauthorized(new { message = "Invalid username or password" });
         }
-
-        // Generate JWT token (implementation omitted for brevity)
-
         return Ok(new { token = "your_jwt_token" });
+    }
+    [HttpPost("ChangePassword")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var user = await _context.Users.FindAsync(model.UserId);
+        if (user == null)
+        {
+            return NotFound("User not found");
+        }
+
+        if (user.PasswordHash != model.CurrentPassword)
+        {
+            return BadRequest("Current password is incorrect");
+        }
+
+        user.PasswordHash = model.NewPassword;
+        user.UpdatedAt = DateTime.UtcNow;
+
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
+
+        return Ok("Password changed successfully");
     }
 }

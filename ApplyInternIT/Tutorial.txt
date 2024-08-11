@@ -18,6 +18,16 @@ Json:
 }
 URL: http://localhost:7221/api/auth/login
 
+++ChangePassword
+method:POST
+URL: http://localhost:7221/api/auth/ChangePassword
+Json:
+{
+    "UserId": 1,
+    "CurrentPassword": "current-password",
+    "NewPassword": "new-password"
+}
+
 ++Xem danh sách user:
 method: Get
 URL: http://localhost:7221/api/user
